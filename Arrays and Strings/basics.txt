@@ -1,0 +1,13 @@
+Arrays can be Static or Dynamic.
+
+Static arrays -> An array for which the size or length is determined when the array is created/allocated. We start
+at 0 and the last position is n-1. In a static array, you can still
+
+- index an element
+- add/remove
+
+However, the size is determined based on the numbers provided during initialization which is fixed once defined. The memory is
+allocated on the stack.
+
+Dynamic arrays -> Array size is not fixed, memory allocation occurs during runtime. The location is in heap memory space.
+Heap is a tree based structure which is used to implement a priority queue.
