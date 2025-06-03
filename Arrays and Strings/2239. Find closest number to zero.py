@@ -16,6 +16,11 @@ def find_closest_number(nums: list[int]) -> int:
     1 <= n <= 1000
     -105 <= nums[i] <= 105
 
+    Time complexity: 0(n)
+    Space complexity: 0(1)
+
+    Distance, val, ele stored and doesn't grow over time
+
     """
 
     # Runtime is 7ms
@@ -40,6 +45,11 @@ def find_closest_number2(nums: list[int]) -> int:
     2. This can be positive/neg, if it is -ve and its positive version is in the array,
     we return that. Otherwise, just return the closest(its already positive).
 
+    Time complexity: 0(n)
+    Space complexity: 0(1)
+
+    closest and ele are the only two variables we store and doesn't grow over time.
+
 
     """
     # we're allowed to do this, since constraints start at n = 1,
@@ -52,6 +62,8 @@ def find_closest_number2(nums: list[int]) -> int:
         return abs(closest)
     else:
         return closest
+
+
 
 
 
