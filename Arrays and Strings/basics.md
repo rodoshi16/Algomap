@@ -1,3 +1,6 @@
+***Arrays***  
+
+
 Arrays can be Static or Dynamic.
 
 Static arrays -> An array for which the size or length is determined when the array is created/allocated. We start
@@ -11,3 +14,20 @@ allocated on the stack.
 
 Dynamic arrays -> Array size is not fixed, memory allocation occurs during runtime. The location is in heap memory space.
 Heap is a tree based structure which is used to implement a priority queue.
+
+***Strings***: 
+
+
+**Time complexity**: 
+
+Concatenating strings creates a new string every time which is not efficient in terms of time/space. 
+
+```
+result += "a"
+```
+This is way, you might want to use a list since append() is 0(1) operation. To later convert the list 
+to string, 
+```
+''.join(result) 
+```
+Here result is the list. 
