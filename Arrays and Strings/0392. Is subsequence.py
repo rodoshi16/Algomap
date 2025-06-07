@@ -23,19 +23,28 @@ def isSubsequence( s: str, t: str) -> bool:
     0 <= t.length <= 104
     s and t consist only of lowercase English letters.
 
+    Edge cases:
+    1) empty string is always True
+    2) subsequence cannot be greater than the length of the String
+
+    Thought process: We iterate through the string and check if matches the
+    character of the substring. If not, simply update the position index.
     Time complexity = 0(n)
     Space complexity = 0(1)
 
     """
+    j = 0
+    if s == '':
+        return True
+    if len(s) > len(t):
+        return False
 
-    i = 0
-    n = len(s)
-    index = 0
+    for i in range(len(t)):
+        if t[i] == s[j]:
+            if j == len(s) - 1:
+                return True
+        j += 1
+    return False
 
-    while i < n:
-        if s[i] in t and i <= t.index(s[i]):
-            index = t.index(s[i])
-            i += 1
-        else:
-            return False
-    return True
+
+
