@@ -29,22 +29,23 @@ def maxProfit(prices: list[int]) -> int:
     Time complexity: 0(n)
     Space complexity: 0(1)
 
+    Thought process: Iterate through and track lowest price seen,
+    at every price calc profit and return the max as needed
 
     """
-    smallest = prices[0]
-    biggest = 0
-    index = 0
 
-    for i in range(1, len(prices)):
-        if prices[i] < smallest:
-            smallest = prices[i]
-            index = i
+    min_price = float('inf')
+    max_profit = 0
 
-    if index + 1 >= len(prices):
-        return 0
+    for price in prices:
+        if price < min_price:
+            min_price = price
+        profit = price - min_price
+        if profit > max_profit:
+            max_profit = profit
 
-    for i in range(index + 1, len(prices)):
-        if prices[i] > biggest:
-            biggest = prices[i]
+    return max_profit
 
-    return biggest - smallest
+
+
+
