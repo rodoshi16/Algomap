@@ -23,6 +23,9 @@ def longestCommonPrefix(strs: list[str]) -> str:
     0 <= strs[i].length <= 200
     strs[i] consists of only lowercase English letters if it is non-empty.
 
+    Time complexity: 0(n^2)
+    Space complexity: 0(1)
+
     """
     first_word = strs[0]
     common_prefix = ''
