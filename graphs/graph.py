@@ -44,8 +44,8 @@ class Graph:
 
 
         if item1 in self._vertices and item2 in self._vertices:
-            v1 = self._vertices[item]
-            v2 = self._vertices[item]
+            v1 = self._vertices[item1]
+            v2 = self._vertices[item2]
         
             v1.neighbours.add(v2)
             v2.neighbours.add(v1)
@@ -55,7 +55,32 @@ class Graph:
     
     def adjacent(self, item1: Any, item2: Any) -> bool:
 
-        #
+        #check if v2 is a neighbour of v1 and vise versa 
+
+        if item1 in self._vertices and item2 in self._vertices:
+            v1 = self._vertices[item1]
+            v2 = self._vertices[item2]
+
+            return v2 in v1.neighbours and v1 in v2.neighbours
+        else:
+            return False 
+
+    def get_neighbours(self, item: Any) -> set:
+
+        # 1. check if the vertex exists in the set of vertices 
+        # 2. Find the neighbours 
+
+        s = set()
+        if item in self._vertices:
+            v1 = self._vertices[item]
+
+            for n in v1.neighbours:
+                s.add(n.item)
+        else:
+            raise ValueError 
+        
+        return s 
+
     
 
     
