@@ -1,0 +1,20 @@
+**Graphs** 
+
+A very common way of representing networks with entities and relationships between them. 
+
+**What does a graph consist of**
+
+- set of Vertices and Edges G=(V,E)
+- Edge is a pair of vertices E=(V1,V2) where the vertcies are distinct 
+- two vertices being *Adjacent* means they are connected by a single edge 
+- the *degree* is the number of neighbours of that vertex 
+- a path of length K from vertex u to ws is a sequence of edges where u is the origin and v is the destination. In a path, all the vertices must be distinct 
+length of the path = number of edges used in the sequence 
+- max number of edges = n(n-1)/2 
+
+NOTE: connected means there is a path to get from vertex A to B. but adjacent means there is an edge between them. Two vertices can be connected but not adjacent
+
+
+Edge restrictions: 
+
+we cannot have a vertex with an edge to itself and all edges are symmetric 
