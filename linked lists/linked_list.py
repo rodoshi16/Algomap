@@ -93,6 +93,48 @@ class LinkedList:
                 return IndexError
             else:
                 return node.item 
+        
+
+        def append(self, item: Any):
+            new_node = _Node(item)
+            if self._first is None:
+                self._first = new_node
+            else:
+                curr = self._first 
+                while curr.next is not None:
+                    curr = curr.next 
+            
+                curr.next = new_node
+            
+    
+        def insert(self, i: int, item: Any):
+            """
+
+            insert a node with item at index i.
+        
+            """
+            new_node = _Node(item)
+            
+            curr = self._first 
+            index = 0 
+
+            while curr is not None:
+                if index == i:
+                    val = curr.next 
+                    curr.next = new_node
+                    new_node.next = val 
+            
+                else:
+                    curr = curr.next 
+                    index += 1
+            
+            raise IndexError
+        
+            
+
+
+        
+
 
 
 
