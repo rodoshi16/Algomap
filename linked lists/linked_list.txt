@@ -1,0 +1,5 @@
+We know lists are ARRAY based implementation of List abstract data types. Inserting and deleting items in a python list can require shifting many elements in computer memory. Inserting and deleting at the front of a Python list can take 0(n) time where n is the length of the list.
+Lists store elements in contigeous block of memory, so items need to be shifted around when inserting or deleting. Linked lists have references to the next object. 
+
+
+_Node represents a single element of the list. Each node has next and item. The last node points to none. 
