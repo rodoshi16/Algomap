@@ -149,29 +149,41 @@ class LinkedList:
                 index += 1
 
         raise IndexError
-    
+
 
     def delete_node(self, item: Any) -> None:
-        new_node = _Node(item)
+        """
 
-    #check not none to mutate first 
-        if self._first is not None and self._first.item == item:
-            val = self._firt.next 
-            self._first = new_node
-            self._first.next = val 
-        
-            curr = self._first 
+        >>> n1 = _Node(1)
+        >>> n2 = _Node(2)
+        >>> n3 = _Node(3)
+        >>> n1.next = n2
+        >>> n2.next = n3
+        >>> l1 = LinkedList()
+        >>> l1._first = n1
+        >>> l1.delete_node(3)
+        >>> l1.print_items()
+        1
+        2
 
 
-            while curr is not None:
-                if curr.item == item:
-                    val = curr.next 
-                    curr.next = val.next 
-                
-                else:
-                    curr = curr.next 
-            
-            
+
+
+        """
+        if self._first is None:
+            return
+
+        if self._first.item == item:
+            self._first = self._first.next
+            return
+
+        curr = self._first
+        while curr.next is not None:
+            if curr.next.item == item:
+                curr.next = curr.next.next
+                return
+            curr = curr.next
+
 
 
 
