@@ -36,6 +36,71 @@ class LinkedList:
                 print(node.item)
                 node = node.next
         
+        def toList(self) -> list: 
+            """
+            Take a linked list and turn that into a list. 
+            
+            """
+
+            if self._first is not None:
+                curr = self._first 
+            
+            items = []
+
+            while curr is not None:
+                items.append(curr.item)
+                curr = curr.next 
+            
+            returm items 
+
+        
+        def __getitem__(self, i: int):
+            """
+            Return the item of the linkedist at index i. 
+            
+            
+            """
+
+            if self._first is not None:
+                node = self._first 
+            
+            index = 0 
+            while node is not None:
+                if index == i:
+                    return node.item
+                
+                else:
+                    curr = curr.next 
+                    index += 1 
+            
+            #end of list and no item no has been returned, we have reached the end of the linked list and that i > indices available
+            raise IndexError 
+
+        #Another way of doing the same method but in a different traversal logic 
+
+        def __getitem__(self, i: int):
+
+            node = self._first 
+            index = 0 
+
+            #demorgan's law, node is not None and index != i
+            while not (node is None or index == i):
+                node = node.next
+                index += 1 
+            
+            #end of the while loop, either node is none or index == i 
+            if node is none:
+                return IndexError
+            else:
+                return node.item 
+
+
+
+
+
+
+
+
 
 
 
