@@ -1,0 +1,37 @@
+Not all data has liner order, some are hierarchial. Like charts,file storage etc. 
+
+Trees are a ***recursive*** data structure with the following definition. A tree is either:
+
+- empty
+- has  root value connected to any number of other trees called the subtrees of that tree 
+
+
+*size*: number of values in the tree. Whats the relationship between the size of a tree and the size of its subtree? 
+
+size of tree = 1 + size of subtree 
+
+a *leaf* is a value with no subtrees. Relationship between the number of leaves of a tree and the number of leaves of its subtree?
+
+leaves in a tree = leaves in a subtree 
+
+*Internal node/* : a node which has at least one subtree. NOT LEAVES. The relationship between the number of uinternal values of a tree and the number of leaves of its subtree?
+
+-> they add up to give the total number of nodes + 1 (for the root)
+
+**Height**: length of the longest path from its root to one of its leaves, counting the number of values on that path. 
+
+height of a tree = 1 + max(height of all subtrees)
+
+**Children**  - the nodes directly connected to the parent
+
+**descendants** - include the immediate children + children of its children and so on 
+
+ What’s the relationship between the number of descendants of a value and the number of descendants of its children?
+
+ The children just don't include the immediate children of the node which is itself 
+
+ ancestors: the parents, parents of parents and so on 
+
+
+A VALUE IS NEVER A CHILD OR PARENT OF ITSELF 
+
