@@ -31,6 +31,25 @@ def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     The number of nodes in the list is the range [0, 5000].
     -5000 <= Node.val <= 5000
 
+    Time complexity: 0(n)
+    Space complexity: 0(1)
+
     """
+
+    #initialize
+    curr, prev = head, None
+
+    while curr is not None:
+        #store the next value
+        temp = curr.next
+        #draw the backwards connection
+        curr.next = prev
+        #move the prev pointer to curr
+        prev = curr
+        #curr will move to temp (which is technically next in the list)
+        curr = temp
+
+    return prev
+
 
 

@@ -24,6 +24,9 @@ def findMaxAverage(num, k: int) -> float:
     1 <= k <= n <= 105
     -104 <= nums[i] <= 104
 
+    Time compelxity: 0(n)
+    Space: 0(1)
+
     """
 
     curr_sum = 0
