@@ -45,3 +45,26 @@ class Tree:
             for subtree in self._subtrees:
                 length += subtree.__len__()
         return length + 1
+
+    
+    def str_indented(self, depth: int) -> str:
+        """
+
+        Return an indented represenation of the tree. 
+
+        The indentation is decided by the depth of the tree. 
+    
+        
+        """
+
+        if self.is_empty():
+            return ''
+        
+        else:
+            str_so_far = '  ' * depth + f'{self._root}\n'
+            for subtree in self._subtrees:
+                subtree.str_indented(depth+1):
+            return str_so_far
+            
+            
+
