@@ -65,6 +65,27 @@ class Tree:
             for subtree in self._subtrees:
                 subtree.str_indented(depth+1):
             return str_so_far
+    
+    def preorder(self, act: Callable[[Any], None]) -> None:
+    """
+    Perform a preorder traversal of the tree and apply 'act' to each node's root.
+
+    >>> lt = Tree(2, [Tree(4, []), Tree(5, [])])
+    >>> rt = Tree(13, [Tree(16, []), Tree(17, [])])
+    >>> t = Tree(10, [lt, rt])
+    >>> t.preorder(print)
+    10
+    2
+    4
+    5
+    13
+    16
+    17
+    """
+    act(self._root)
+    for subtree in self._subtrees:
+        return subtree.preorder(act)
+        
             
             
 
