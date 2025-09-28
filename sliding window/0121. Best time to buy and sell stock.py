@@ -45,6 +45,41 @@ def maxProfit(prices: list[int]) -> int:
 
     return max_profit
 
+def maxProfit(prices: list[int]) -> int:
+    """"
+
+    Another naive solution. Aims to iterate using just one for loop.
+    Slices the list from i+1 to end to find the max selling price.
+
+    Ex: [10,1,5,6,7,1]
+
+    Here, starting at 10, the highest profit we can get is from 7
+    similarly, from starting at 1, highest is 7 so we only subtract from that.
+
+    However, max(prices[i+1:]) is NOT 0(1) lookup. To slice a list in python,
+
+    1. Python creates a brand-new list object
+    2. Copies each element from the slice to a new range
+
+    For list of size n, the operation takes 0(n) time.
+
+    Each time we iterate, we're slicing a list and therefore, the time complexity is 0(n^2)
+    in this solution - not efficient.
+
+    """
+
+    max_profit = 0
+
+    for i in range(len(prices) -1):
+        max_sell = max(prices[i+1:])
+        profit = max_sell - prices[i]
+        if profit > max_profit:
+            max_profit = profit
+
+    return max_profit
+
+
+
 
 
 
