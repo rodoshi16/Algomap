@@ -45,7 +45,7 @@ def maxProfit(prices: list[int]) -> int:
 
     return max_profit
 
-def maxProfit(prices: list[int]) -> int:
+def maxProfit2(prices: list[int]) -> int:
     """"
 
     Another naive solution. Aims to iterate using just one for loop.
@@ -77,6 +77,49 @@ def maxProfit(prices: list[int]) -> int:
             max_profit = profit
 
     return max_profit
+
+
+def maxProfit_Optimal(prices: list[int]) -> int:
+    """
+
+    Classic 2 pointer approach.
+
+    Init left and right to be the first two elements of the list.
+
+    [10,1,5,3,6,4]
+
+
+
+    Now, 10 > 1, this means 1 is clearly a cheaper buying price and i need to move my left pointer to where
+    right is since L > R. Hence we have left = right in the else condition. I dont want to be stuck here so i need
+    to update my right to move one up.
+
+    1 < 5 (left < right), this means I can find the profit and compare. After I'm done, move right to keep moving.
+
+    This is the most optimal solution where we update pointers only where we need.
+
+
+
+
+    """
+
+
+
+    left = 0
+    right = 1
+    max_profit = 0
+
+    while right < len(prices):
+        if prices[left] < prices[right]:
+            profit = prices[right] - prices[left]
+            max_profit = max(profit, max_profit)
+
+        else:
+            left = right
+    right += 1
+
+    return max_profit
+
 
 
 
