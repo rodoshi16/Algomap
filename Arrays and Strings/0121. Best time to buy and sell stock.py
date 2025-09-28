@@ -34,17 +34,20 @@ def maxProfit(prices: list[int]) -> int:
 
     """
 
-    min_price = float('inf')
+    #naive solution -> brute force
+
     max_profit = 0
 
-    for price in prices:
-        if price < min_price:
-            min_price = price
-        profit = price - min_price
-        if profit > max_profit:
-            max_profit = profit
+
+    for i in range(len(prices)):
+        for j in range(i, len(prices)):
+            profit = prices[j] - prices[i]
+            if profit > max_profit:
+                max_profit = profit
 
     return max_profit
+
+
 
 
 
