@@ -47,32 +47,6 @@ def maxProfit(prices: list[int]) -> int:
 
 
 
-#solution2: slice the list from i+1 to find the max selling price
-def maxProfit2(prices: list[int]) -> int:
-    """
-
-    Another naive solution where you would think
-
-
-
-
-    """
-
-
-
-
-    max_profit = 0
-
-    for i in range(len(prices) -1):
-        max_sell = max(prices[i+1:])
-        profit = max_sell - prices[i]
-        if profit > max_profit:
-            max_profit = profit
-
-    return max_profit
-
-
-
 
 
 
