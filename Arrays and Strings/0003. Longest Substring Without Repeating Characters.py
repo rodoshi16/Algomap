@@ -27,3 +27,20 @@ def lengthOfLongestSubstring(self, s: str) -> int:
     s consists of English letters, digits, symbols and spaces.
 
     """
+
+    f = ''
+    max_str = 0
+
+    for string in s:
+        if string not in f:
+            f += string
+        else:
+            if len(f) > max_str:
+                max_str = len(f)
+
+    return max_str
+
+
+
+
+
