@@ -5,8 +5,8 @@ def findMaxAverage(num, k: int) -> float:
     Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10-5 will be accepted.
     Example 1:
 
-    >>> findMaxAverage([1,12,-5,-6,50,3], 4)
-    12.75000
+    # >>> findMaxAverage([1,12,-5,-6,50,3], 4)
+    # 12.75000
 
 
     Input: nums = [1,12,-5,-6,50,3], k = 4

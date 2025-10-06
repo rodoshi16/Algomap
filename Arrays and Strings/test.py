@@ -1,4 +1,4 @@
-def lengthOfLongestSubstring(self, s: str) -> int:
+def lengthOfLongestSubstring(s: str) -> int:
     """
 
     Given a string s, find the length of the longest substring without duplicate characters.
@@ -29,20 +29,24 @@ def lengthOfLongestSubstring(self, s: str) -> int:
     Time complexity: 0(n)
     Space complexity: 0(1)
 
+    >>> lengthOfLongestSubstring("abcabcbb")
+    3
+
     """
 
-    f = ''
-    max_str = 0
+    left = 0
+    seen = set()
+    longest = 0
 
-    for string in s:
-        if string not in f:
-            f += string
-        else:
-            if len(f) > max_str:
-                max_str = len(f)
-
-    return max_str
-
+    for r in range(len(s)):
+        while s[r] in seen:
+            seen.remove(s[left])
+            left += 1
+        seen.add(s[r])
+        curr_len = (r - left) + 1
+        if curr_len > longest:
+            longest = curr_len
+    return longest
 
 
 
