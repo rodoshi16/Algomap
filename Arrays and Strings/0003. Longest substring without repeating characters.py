@@ -32,6 +32,7 @@ def lengthOfLongestSubstring(s: str) -> int:
     >>> lengthOfLongestSubstring("abcabcbb")
     3
 
+
     """
 
     left = 0
