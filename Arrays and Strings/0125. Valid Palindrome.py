@@ -22,5 +22,13 @@ def isPalindrome(self, s: str) -> bool:
     Since an empty string reads the same forward and backward, it is a palindrome.
 
     """
+    
+    new = ''
+        for string in s:
+            if string.isalnum():
+                new += string
 
+
+
+    return new.lower().strip() == new[::-1].lower().strip()
 
