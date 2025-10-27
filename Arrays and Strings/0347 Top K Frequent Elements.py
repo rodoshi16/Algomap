@@ -29,6 +29,13 @@ def topKFrequent(nums: list[int], k: int) -> list[int]:
     k is in the range [1, the number of unique elements in the array].
     It is guaranteed that the answer is unique
 
+    All cases:
+    1. Test base case: when len(nums) == k
+    2. When the first elements are the clear winners of frequency
+    3. Elements at the end have most frequency
+    4. Elements with same frequency
+    5. Negative numbers
+
     >>> topKFrequent([1], 1)
     [1]
     >>> topKFrequent([1,2,3], 3)
@@ -41,6 +48,10 @@ def topKFrequent(nums: list[int], k: int) -> list[int]:
     [1, 2, 3]
     >>> topKFrequent([3,3,3,3,3,3,2,2,2,2,2,2,1,1,1,1,1,1], 1)
     [1]
+    >>> topKFrequent([3,4,5,6,6,6,1,1,1,1,1,1,1, 9,9], 1)
+    [1]
+    >>> topKFrequent([-1,-1, -1, -8, -8, -9, 9, -9], 2)
+    [-1, -9]
 
 
 
