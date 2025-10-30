@@ -27,6 +27,7 @@ def paint_the_ceiling(n: int, s: int, k: int, b: int, a: int, m: int) -> int:
     >>> paint_the_ceiling(3, 2, 3, 3, 15, 2)
     5
 
+
     """
 
     count = 0
@@ -35,10 +36,16 @@ def paint_the_ceiling(n: int, s: int, k: int, b: int, a: int, m: int) -> int:
         n = ((k * sides[i-1] + b) % m) + 1 + sides[i-1]
         sides.append(n)
 
-    for i in range(len(sides)):
-        for j in range(len(sides)):
-            if sides[i] * sides[j] <= a:
-                count += 1
+    i = 0
+    j = i
+
+    while i < len(sides):
+        if sides[i] * sides[j] <= a:
+            count += 1
+        j += 1
+        if j == len(sides):
+            i += 1
+            j = 0
 
     return count
 
