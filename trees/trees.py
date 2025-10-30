@@ -70,6 +70,40 @@ class Tree:
                 size += subtree.size()
             return size
 
+    def height(self) -> int:
+        """
+
+        Find the height of the tree. Height is the length of the longest subtree.
+
+        >>> t3 = Tree(1, [Tree(2, [Tree(4, [Tree(6, [])])]), Tree(3, [Tree(5, [Tree(7, [])])])])
+        >>> t3.height()
+        4
+        >>> t2 = Tree(1, [Tree(2, [Tree(4, [])]), Tree(3, [Tree(5, [])])])
+        >>> t2.height()
+        3
+        >>> t4 = Tree(1, [Tree(2, []), Tree(3, [Tree(5, [])])])
+        >>> t4.height()
+        3
+        >>> t5 = Tree(1, [Tree(2, []), Tree(3, [Tree(5, [Tree(9, [Tree(10, [])])])])])
+        >>> t5.height()
+        5
+
+
+
+        """
+        height = 0
+        if self._root is None:
+            return 0
+        elif self._subtrees == []:
+            return 1
+        else:
+
+           height = 1
+           for subtree in self._subtrees:
+               if subtree.height() > height:
+                   height = subtree.size()
+           return height + 1
+
 
 
 
