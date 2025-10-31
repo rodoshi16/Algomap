@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Optional, Any
+from typing import Callable, Optional, Any
 
 
 class Tree:
@@ -248,6 +248,27 @@ class Tree:
             if right_subtree._subtrees != []:
                 self._subtrees.remove(right_subtree)
                 self._subtrees.extend(right_subtree._subtrees)
+
+    def preorder(self, act: Callable[[Any], None]) -> None:
+        """
+        Perform a preorder traversal of the tree and apply 'act' to each node's root.
+
+        >>> lt = Tree(2, [Tree(4, []), Tree(5, [])])
+        >>> rt = Tree(13, [Tree(16, []), Tree(17, [])])
+        >>> t = Tree(10, [lt, rt])
+        >>> t.preorder(print)
+        10
+        2
+        4
+        5
+        13
+        16
+        17
+        """
+        act(self._root)
+        for subtree in self._subtrees:
+            subtree.preorder(act)
+
 
 
 
