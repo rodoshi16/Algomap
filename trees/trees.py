@@ -44,6 +44,12 @@ class Tree:
         """
         return self._str_indented(0)
 
+    def __repr__(self) -> str:
+        """Return a string representation of this tree.
+        """
+        return self._str_indented(0)
+
+
     def size(self) -> int:
         """
 
@@ -195,6 +201,53 @@ class Tree:
                 val += n[0]
                 count += n[1]
             return val, count
+
+    def delete_item(self, n: int) -> bool:
+        """
+        Delete the item n from the tree and return True.
+        Return false if not possible
+
+
+        >>> t = Tree(1, [Tree(2, []), Tree(3, [])])
+        >>> t.delete_item(1)
+        True
+
+        """
+
+        if self._root is None:
+            return False
+        elif self._root == n:
+            self.delete_root()
+            return True
+        else:
+            for subtree in self._subtrees:
+                deleted = subtree.delete_item(n)
+                if deleted == True:
+                    return True
+            return False
+
+    def delete_root(self) -> None:
+        """
+
+        Return the root of the tree. If the root has children,
+        it will prioritize the right subtree to the new root.
+
+        >>> t = Tree(1, [Tree(2, []), Tree(3, [])])
+        >>> t.delete_item(1)
+        >>> t
+        3
+         2
+
+
+        """
+        if self._subtrees == []:
+            self._root = None
+        else:
+            right_subtree = self._subtrees[-1]
+            self._root = right_subtree._root
+            if right_subtree._subtrees != []:
+                self._subtrees.remove(right_subtree)
+                self._subtrees.extend(right_subtree._subtrees)
 
 
 
