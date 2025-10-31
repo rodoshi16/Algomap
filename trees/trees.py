@@ -87,9 +87,6 @@ class Tree:
         >>> t5 = Tree(1, [Tree(2, []), Tree(3, [Tree(5, [Tree(9, [Tree(10, [])])])])])
         >>> t5.height()
         5
-
-
-
         """
         height = 0
         if self._root is None:
@@ -103,6 +100,104 @@ class Tree:
                if subtree.height() > height:
                    height = subtree.size()
            return height + 1
+
+    def leaves(self) -> list:
+        """
+
+        Return the leaves of a tree.
+
+        >>> t = Tree(1, [Tree(2, []), Tree(3, [Tree(5, [Tree(9, [Tree(10, [])])])])])
+        >>> t1 = Tree(2, [Tree(5, []), Tree(6, []), Tree(7, [])])
+        >>> t2 = Tree(3, [Tree(8, []), Tree(9, []), Tree(10, [])])
+        >>> t3 = Tree(4, [Tree(11, []), Tree(12, []), Tree(13, [])])
+        >>> t4 = Tree(1, [t1, t2, t3])
+        >>> t4.leaves()
+        [5, 6, 7, 8, 9, 10, 11, 12, 13]
+        >>> t5 = Tree(None, [])
+        >>> t5.leaves()
+        []
+        >>> t6 = Tree(1, [])
+        >>> t6.leaves()
+        [1]
+        >>> Tree(0, [Tree(1, []), Tree(2, []), Tree(3, [])]).leaves()
+        [1, 2, 3]
+        >>> Tree(0, [Tree(1, [Tree(2, [Tree(3, [])])])]).leaves()
+        [3]
+        >>> Tree(0, [Tree(1, [Tree(4, [])]), Tree(2, []), Tree(3, [Tree(5, []), Tree(6, [])])]).leaves()
+        [4, 2, 5, 6]
+        >>> Tree(0, [Tree(1, [Tree(2, [])])]).leaves()
+        [2]
+        >>> t = Tree(1, [Tree(2, []), Tree(3, [Tree(5, [])])])
+        >>> t.leaves()
+        [2, 5]
+
+
+        """
+
+        if self._root is None:
+            return []
+        elif self._subtrees == []:
+            return [self._root]
+        else:
+            lst = []
+            for subtree in self._subtrees:
+                lst.extend(subtree.leaves())
+            return lst
+
+    def average(self) -> float:
+        """Return the average of all values in this tree.
+        Return 0.0 if this tree is empty.
+        Precondition: this tree is a tree of numbers
+
+        >>> t6 = Tree(2, [Tree(5, []), Tree(6, [])])
+        >>> t7 = Tree(3, [Tree(7, [])])
+        >>> t8 = Tree(4, [Tree(8, [])])
+        >>> t9 = Tree(1, [t6, t7, t8])
+        >>> t9.average()
+        4.5
+        >>> t1 = Tree(2, [Tree(5, []), Tree(6, []), Tree(7, [])])
+        >>> t2 = Tree(3, [Tree(8, []), Tree(9, []), Tree(10, [])])
+        >>> t3 = Tree(4, [Tree(11, []), Tree(12, []), Tree(13, [])])
+        >>> t4 = Tree(1, [t1, t2, t3])
+        >>> t4.average()
+        7.0
+
+        """
+        #track the number of nodes in the tree
+        # count the value of the nodes
+
+        if self.is_empty():
+            return 0.0
+        elif not self._subtrees:
+            return float(self._root)
+        else:
+            total = self._root
+            count = 1
+            for subtree in self._subtrees:
+                n = subtree.recursive_helper()
+                total += n[0]
+                count += n[1]
+            return total/count
+
+    def recursive_helper(self) -> tuple:
+        """
+        Return a tuple of the value of the node and the count.
+        """
+        if self._root is None:
+            return 0, 0
+        elif self._subtrees == []:
+            return self._root, 1
+        else:
+            count = 1
+            val = self._root
+            for subtree in self._subtrees:
+                n = subtree.recursive_helper()
+                val += n[0]
+                count += n[1]
+            return val, count
+
+
+
 
 
 
