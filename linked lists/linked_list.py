@@ -1,12 +1,11 @@
 from __future__ import annotations
-
 from typing import Any, Optional
 
 
 class _Node:
     item: Any
-    #by default it doesnt link to any other node
     next: Optional[_Node]
+
     def __init__(self, item: Any):
         self.item = item
         self.next = None
@@ -57,6 +56,7 @@ class LinkedList:
             curr = curr.next
 
         return items
+
     def __getitem__(self, i: int):
         """
         Return the item of the linkedist at index i.
@@ -179,7 +179,6 @@ class LinkedList:
                 curr.next = curr.next.next
                 return
             curr = curr.next
-
 
 
 if __name__ == '__main__':
