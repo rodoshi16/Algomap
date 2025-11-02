@@ -21,8 +21,31 @@ def binary_search(nums: list[int], target) -> int:
 
     >>> binary_search([-1,0,2,4,6,8], 3)
     -1
+    >>> binary_search([-1,0,2,4,6,8], -1)
+    0
+    >>> binary_search([-1,0,2,4,6,8], 8)
+    5
+    >>> binary_search([1,1,1,1], 1)
+    1
+    >>> binary_search([-7, -6, -5, -2, -1], -1)
+    4
+    >>> binary_search([-7, -6, -5, -2, -1], -7)
+    0
+    >>> binary_search([9909090, 797976567, 675767863456], 8)
+    -1
+    >>> binary_search([], 3)
+    -1
+    >>> binary_search([3], 3)
+    0
+    >>> binary_search([3], 5)
+    -1
+    >>> binary_search([1, 5], 1)
+    0
+    >>> binary_search([1, 5], 5)
+    1
 
-    """
+
+"""
 
     l = 0
     r = len(nums) - 1
