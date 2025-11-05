@@ -19,9 +19,25 @@ def minEatingSpeed(piles: list[int], h: int) -> int:
     4
 
     """
-    #koko wants to eat all the bananas = sum(arr)
-    #eating rate -> k (min)
-    #max num - eating rate (per hour eat max)
+    l = 1
+    r = max(piles)
+    min_k = max(piles)
+
+    while l <= r:
+        mid = (l+r) // 2
+        hours = 0
+
+        for ele in piles:
+            hours += math.ceil(ele/mid)
+
+        if hours <= h:
+            min_k = min(min_k, mid)
+            r = mid - 1
+        else:
+            l = mid + 1
+
+    return min_k
+
 
 
 
