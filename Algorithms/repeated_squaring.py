@@ -1,5 +1,7 @@
 import math
-def modexp(a, b, p) -> int:
+
+
+def modexp(a: int, b: int, p: int) -> int:
     """
 
     MODEXP = {⟨a, b, c, p⟩| a, b, c, and p are positive binary integers
@@ -9,7 +11,7 @@ def modexp(a, b, p) -> int:
     Therefore, we must calculate in polytime.
 
     >>> modexp(3,5,7)
-    9
+    5
 
     """
     result = 1
@@ -21,7 +23,6 @@ def modexp(a, b, p) -> int:
         b = math.ceil(b/2)
 
     return result
-
 
 
 
