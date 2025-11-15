@@ -11,6 +11,8 @@ class _Vertex:
      - item: The data stored in the vertex
      - neighbours: The vertices that are adjacent to this vertex
 
+     Graphs allow circles
+
     >>> v1 = _Vertex('a', set())
     >>> v2 = _Vertex('b', set())
     >>> v3 = _Vertex('c', set())
@@ -35,14 +37,15 @@ class graph:
     Length: one less than no of vertices
     connected: there is a path between u and u'
 
-
-
-
-
-
-
-
     """
+
+    def __init__(self) -> None:
+        """
+        Initialize an empty graph (no vertices or edges).
+        """
+        self.vertices = {}
+
+
 
 
 
