@@ -20,7 +20,7 @@ def modexp(a: int, b: int, p: int) -> int:
             result = (result * a) % p
 
         a = (a * a) % p
-        b = math.ceil(b/2)
+        b = b // 2
 
     return result
 
