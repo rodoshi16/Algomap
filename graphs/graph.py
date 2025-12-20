@@ -182,22 +182,9 @@ class Graph:
         while s:
             curr = s.pop()
 
-            for n in reversed(list(self._vertices[curr].neighbours)):
+            for n in self._vertices[curr].neighbours:
                 if n.item not in visited:
                     s.append(n.item)
                     visited.append(n.item)
 
         return visited
-
-
-
-
-
-
-
-
-
-
-
-
-
