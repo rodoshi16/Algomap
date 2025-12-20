@@ -153,6 +153,46 @@ class Graph:
 
         return visited
 
+    def dfs(self, start: Any) -> list[Any]:
+        """
+
+        Traverse through the graph in depth first search.
+
+        >>> g = Graph()
+        >>> g.add_vertex('A')
+        >>> g.add_vertex('B')
+        >>> g.add_vertex('C')
+        >>> g.add_vertex('D')
+        >>> g.add_vertex('G')
+        >>> g.add_edge('A', 'B')
+        >>> g.add_edge('A', 'C')
+        >>> g.add_edge('B', 'D')
+        >>> g.add_edge('C', 'G')
+        >>> g.dfs('A')
+        ['A', 'B', 'D', 'C', 'G']
+
+
+        """
+        s = []
+        visited = []
+
+        visited.append(start)
+        s.append(start)
+
+        while s:
+            curr = s.pop()
+
+            for n in reversed(list(self._vertices[curr].neighbours)):
+                if n.item not in visited:
+                    s.append(n.item)
+                    visited.append(n.item)
+
+        return visited
+
+
+
+
+
 
 
 
