@@ -117,6 +117,46 @@ class Graph:
                 m[index[n.item]][index[v]] = 1
         return m
 
+    def bfs(self, start: Any) -> list[Any]:
+        """
+        Traverse the graph in breath first search and list out the
+        items
+
+        >>> g = Graph()
+        >>> g.add_vertex('A')
+        >>> g.add_vertex('B')
+        >>> g.add_vertex('C')
+        >>> g.add_vertex('D')
+        >>> g.add_vertex('G')
+        >>> g.add_edge('A', 'B')
+        >>> g.add_edge('A', 'C')
+        >>> g.add_edge('B', 'D')
+        >>> g.add_edge('C', 'G')
+        >>> g.bfs('A')
+        ['A', 'B', 'C', 'D', 'G']
+
+
+
+        """
+        q = []
+        visited = []
+
+        q.append(start)
+        visited.append(start)
+
+        while q:
+            curr = q.pop(0)
+            for n in self._vertices[curr].neighbours:
+                if n.item not in visited:
+                    q.append(n.item)
+                    visited.append(n.item)
+
+        return visited
+
+
+
+
+
 
 
 
