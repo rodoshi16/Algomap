@@ -26,25 +26,34 @@ def longest_substring(s: str) -> int:
     0 <= s.length <= 5 * 104
     s consists of English letters, digits, symbols and spaces.
 
+    >>> longest_substring(" ")
+    1
+    >>> longest_substring("abcabcbb")
+    3
     >>> longest_substring("pwwkew")
     3
+    >>> longest_substring("abcabcabc")
+    3
+
 
     """
     l = 0
-    r = len(s) - 1
-    res = ""
-    max_l = ""
+    sub = set()
+    max_l = 0
 
-    for i in range(l, len(s)):
-        if s[i] not in res:
-            res += s[i]
+    for right in range(len(s)):
+        if s[right] not in sub:
+            sub.add(s[right])
         else:
-            if len(res) > len(max_l):
-                max_l = res
-            l += 1
-            res = ""
-    if len(res) > len(max_l):
-        max_l = res
+            while s[right] in sub:
+                sub.remove(s[l])
+                l += 1
+            sub.add(s[right])
+        max_l = max(max_l, len(sub))
 
-    return len(max_l)
+    return max_l
+
+
+
+
 
