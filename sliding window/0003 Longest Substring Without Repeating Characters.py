@@ -35,6 +35,23 @@ def longest_substring(s: str) -> int:
     >>> longest_substring("abcabcabc")
     3
 
+    Time complexity: 0(n)
+
+    - for loop runs max len(str)
+    - abcdea len(s)-1 0(n) calls max
+    - the while loop doesnt run for every of n
+
+    Total Time complexity: 0(n + n) ~ 0(n)
+
+    Space complexity:
+    - sub could store the entire string, 0(n)
+    - remember that the amount of memory grows linearly with input size
+
+    To be more precise,
+    Time: 0(n) where n = len(s)
+    Space: 0(m) where m = number of unique characters,
+    worst case m = n where all characters are unique
+
 
     """
     l = 0
