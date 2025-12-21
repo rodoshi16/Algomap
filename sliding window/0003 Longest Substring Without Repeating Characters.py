@@ -26,8 +26,12 @@ def longest_substring(s: str) -> int:
     0 <= s.length <= 5 * 104
     s consists of English letters, digits, symbols and spaces.
 
+    >>> longest_substring("pwwkew")
+    3
+
     """
     l = 0
+    r = len(s) - 1
     res = ""
     max_l = ""
 
@@ -35,10 +39,12 @@ def longest_substring(s: str) -> int:
         if s[i] not in res:
             res += s[i]
         else:
-            l += 1
             if len(res) > len(max_l):
                 max_l = res
+            l += 1
             res = ""
+    if len(res) > len(max_l):
+        max_l = res
 
     return len(max_l)
 
