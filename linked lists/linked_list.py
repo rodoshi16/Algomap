@@ -92,7 +92,7 @@ class LinkedList:
             index += 1
 
         #end of the while loop, either node is none or index == i
-        if node is none:
+        if node is None:
             return IndexError
         else:
             return node.item
