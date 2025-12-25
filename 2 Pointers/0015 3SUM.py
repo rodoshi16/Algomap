@@ -1,4 +1,4 @@
-def three_sum(nums: list[int]) -> int:
+def three_sum(nums: list[int]) -> list:
     """
 
     Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
@@ -31,22 +31,42 @@ def three_sum(nums: list[int]) -> int:
     3 <= nums.length <= 3000
     -105 <= nums[i] <= 105
 
+    >>> three_sum()
+    >>> three_sum([-1,0,1,2,-1,-4])
+    [[-1, -1, 2], [-1, 0, 1]]
+    >>> three_sum([0, 1, 1])
+    []
+
     """
 
-    l = 0
-    r = len(nums) - 1
+    nums.sort()
     lst = []
 
-    while l <= r:
-        s = nums[l] + nums[r] + nums[r-1]
-        if s == 0:
-            lst.append([nums[l], nums[r], nums[r-1]])
-        elif s > 0:
-            r -= 1
-        else:
-            l += 1
+    for i in range(len(nums)):
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+
+        l = i + 1
+        r = len(nums) - 1
+        while l < r:
+            s = nums[i] + nums[l] + nums[r]
+            if s == 0:
+                lst.append([nums[i], nums[l], nums[r]])
+                l += 1
+                r -= 1
+
+                while l < r and nums[l] == nums[l - 1]:
+                    l += 1
+                while l < r and nums[r] == nums[r + 1]:
+                    r -= 1
+
+            elif s > 0:
+                r -= 1
+            else:
+                l += 1
 
     return lst
+
 
 
 
