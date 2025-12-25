@@ -14,6 +14,14 @@ def two_sum2(numbers: list[int], t: int):
     >>> two_sum2([2,7,11,15], 9)
     [1, 2]
 
+    Time complexity: 0(n-1) ~ 0(n)
+
+    Each pointer moves once per iteration in worst case, n-1
+
+    Space complexity: 0(1)
+
+    Storing just the variables, l, r
+
     """
     l = 0
     r = len(numbers) -1
