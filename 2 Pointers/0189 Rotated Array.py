@@ -20,6 +20,7 @@ def rotate_array(nums: list[int], k: int) -> None:
 
 
     """
+
     r = len(nums) - 1
 
     for i in range(k):
