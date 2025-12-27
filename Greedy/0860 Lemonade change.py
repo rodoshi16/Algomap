@@ -1,11 +1,17 @@
 def lemonade_change(bills: list[int]):
     """
 
-    At a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a $5, $10, or $20 bill. You must provide the correct change to each customer so that the net transaction is that the customer pays $5.
+    At a lemonade stand, each lemonade costs $5. Customers are standing in a
+    queue to buy from you and order one at a time (in the order specified by bills).
+    Each customer will only buy one lemonade and pay with either a $5, $10, or
+    $20 bill. You must provide the correct change to each customer so that the
+    net transaction is that the customer pays $5.
 
     Note that you do not have any change in hand at first.
 
-    Given an integer array bills where bills[i] is the bill the ith customer pays, return true if you can provide every customer with the correct change, or false otherwise.
+    Given an integer array bills where bills[i] is the bill the ith customer
+    pays, return true if you can provide every customer with the correct change,
+    or false otherwise.
 
 
 
@@ -39,16 +45,42 @@ def lemonade_change(bills: list[int]):
 
     """
 
+    five = 0
+    ten = 0
     change = 0
 
     for i in range(len(bills)):
-        change += bills[i]
-        if bills[i] > 5:
-            change -= bills[i] - 5
+        if bills[i] == 5:
+            five += 1
+        elif bills[i] == 10:
+            ten += 1
 
-            if change < 0:
+        change = bills[i] - 5
+
+        if change == 5:
+            if five > 0:
+                five -= 1
+            else:
+                return False
+
+        elif change == 10:
+            if five >=2 :
+                five -= 2
+            elif  ten > 0:
+                ten -= 1
+            else:
+                return False
+        elif change == 15:
+            if five > 0 and ten > 0:
+                five -= 1
+                ten -= 1
+            elif five >= 3:
+                five -= 3
+            else:
                 return False
     return True
+
+
 
 
 
