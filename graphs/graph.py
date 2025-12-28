@@ -13,9 +13,9 @@ class _Vertex:
 
      Graphs allow circles
 
-    >>> v1 = _Vertex('a', set())
-    >>> v2 = _Vertex('b', set())
-    >>> v3 = _Vertex('c', set())
+    >>> v1 = _Vertex('a', [])
+    >>> v2 = _Vertex('b', [])
+    >>> v3 = _Vertex('c', [])
     >>> v1.neighbours = {v2, v3}
     >>> v2.neighbours = {v1, v3}
     >>> v3.neighbours = {v1, v2}
@@ -23,9 +23,9 @@ class _Vertex:
     """
 
     item: Any
-    neighbours: set[_Vertex]
+    neighbours: [_Vertex]
 
-    def __init__(self, item: Any, neighbours: set[_Vertex]):
+    def __init__(self, item: Any, neighbours: [_Vertex]):
         self.item = item
         self.neighbours = neighbours
 
@@ -65,7 +65,7 @@ class Graph:
 
 
         """
-        self._vertices[item] = _Vertex(item, set())
+        self._vertices[item] = _Vertex(item, [])
 
     def add_edge(self, item1: Any, item2: Any) -> None:
         """
@@ -79,8 +79,8 @@ class Graph:
             v1 = self._vertices[item1]
             v2 = self._vertices[item2]
 
-            v1.neighbours.add(v2)
-            v2.neighbours.add(v1)
+            v1.neighbours.append(v2)
+            v2.neighbours.append(v1)
 
         else:
             raise ValueError
@@ -173,18 +173,70 @@ class Graph:
 
 
         """
+
         s = []
         visited = []
 
-        visited.append(start)
         s.append(start)
+        visited.append(start)
 
         while s:
             curr = s.pop()
 
-            for n in self._vertices[curr].neighbours:
+            if curr not in visited:
+                visited.append(curr)
+
+            for n in reversed(self._vertices[curr].neighbours):
                 if n.item not in visited:
                     s.append(n.item)
-                    visited.append(n.item)
 
         return visited
+
+    def dfs_recursive(self, start: Any, visited=None):
+        """
+        Recursive approach to depth first search
+
+        >>> g = Graph()
+        >>> g.add_vertex('A')
+        >>> g.add_vertex('B')
+        >>> g.add_vertex('C')
+        >>> g.add_vertex('D')
+        >>> g.add_vertex('G')
+        >>> g.add_edge('A', 'B')
+        >>> g.add_edge('A', 'C')
+        >>> g.add_edge('B', 'D')
+        >>> g.add_edge('C', 'G')
+        >>> g.dfs_recursive('A')
+        ['A', 'B', 'D', 'C', 'G']
+
+
+
+        """
+
+        if visited is None:
+            visited = []
+
+        visited.append(start)
+
+        for n in self._vertices[start].neighbours:
+            if n.item not in visited:
+                self.dfs_recursive(n.item, visited)
+
+        return visited
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
