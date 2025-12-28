@@ -10,42 +10,34 @@ def productExceptSelf(nums: list[int]):
     You must write an algorithm that runs in O(n) time and without using the
     division operation.
 
-    Example 1:
 
-    Input: nums = [1,2,3,4]
-    Output: [24,12,8,6]
-    Example 2:
+    >>> productExceptSelf([1, 2, 3, 4])
+    [24, 12, 8, 6]
+    >>> productExceptSelf([-1, 1, 0, -3, 3])
+    [0, 0, 9, 0, 0]
 
-    Input: nums = [-1,1,0,-3,3]
-    Output: [0,0,9,0,0]
+    Time complexity: 0(n)
+    Space complexity: 0(n)
 
 
-    Constraints:
-
-    2 <= nums.length <= 105
-    -30 <= nums[i] <= 30
-    The input is generated such that answer[i] is guaranteed to fit in a 32-bit
-    integer.
 
 
     """
+    prefix = [nums[0]]
+    suffix = [nums[-1]]
 
+    for i in range(1, len(nums)):
+        prefix.append(prefix[-1]* nums[i])
 
+    for i in range(len(nums) -2, -1, -1):
+        suffix.insert(0, suffix[0]*nums[i])
 
-    lst = []
-    for i in range(len(nums)):
-        p = 1
-        for j in range(len(nums)):
-            if i != j:
-                p *= nums[j]
+    lst = [suffix[1]]
 
-        lst.append(p)
+    for i in range(1, len(nums) -1):
+        lst.append(prefix[i-1]* suffix[i+1])
+
+    lst.append(prefix[-2])
 
     return lst
-
-
-
-
-
-
 
