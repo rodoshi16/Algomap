@@ -10,18 +10,16 @@ def jump_game(nums: list[int]) -> bool:
 
     """
 
-    if nums == [0] or nums == [1]:
-        return True
+    i = len(nums) - 1
+    goal = i
 
-    i = 0
-    while i < len(nums)-1:
-        if i + nums[i] >= len(nums)-1:
-            return True
-        elif nums[i] == 0:
-            return False
-        i += nums[i]
+    while i > -1:
+        if i + nums[i] >= goal:
+            goal = i
 
-    return False
+        i -= 1
+
+    return goal == 0
 
 
 
