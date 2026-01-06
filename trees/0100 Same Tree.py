@@ -27,13 +27,7 @@ def sameTree(p, q):
         return False
     elif p.val != q.val:
         return False
-    else:
-        f = None
-        left = sameTree(p.left, q.left)
-        right = sameTree(p.right, q.right)
-        f = left and right
-
-    return f
+    return sameTree(p.left, q.left) and sameTree(p.right, q.right)
 
 
 
