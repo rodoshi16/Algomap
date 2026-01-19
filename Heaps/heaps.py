@@ -3,14 +3,8 @@ class Heap:
     def __init__(self, l: list):
         self.heap = l
 
-    # def FindMax(self):
-    #     return self.heap[0]
-
-    # def __str__(self):
-    #     s = ""
-    #     for ele in self.heap:
-    #         s += str(ele)
-    #     return s
+    def FindMax(self):
+        return self.heap[0]
 
     def extractMax(self):
         """
@@ -28,9 +22,9 @@ class Heap:
         i = 0
         if 2*i+1 > len(self.heap) and 2*i+2 > len(self.heap):
             return
-        elif 2*i+2 < len(self.heap):
+        elif 2*i+2 > len(self.heap):
             self.heap[i], self.heap[2*i+1] = self.heap[2*i+1], self.heap[i]
-        elif 2*i+1 < len(self.heap):
+        elif 2*i+1 > len(self.heap):
             self.heap[i], self.heap[2*i+2] = self.heap[2*i+2], self.heap[i]
 
         while (2*i+1) <= len(self.heap) and 2*i+2 <= len(self.heap):
