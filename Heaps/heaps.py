@@ -14,6 +14,7 @@ class Heap:
         >>> h.extractMax()
         >>> h.heap
         [15, 9, 9, 7, 7, 4, 5, 3]
+        >>> t = Heap()
 
         """
         self.heap[0], self.heap[-1] = self.heap[-1], self.heap[0]
