@@ -14,6 +14,35 @@ class BinaryTree:
     def __init__(self, root: Node):
         self.root = root
 
+    def __repr__(self):
+        """
+
+        >>> root = Node(1)
+        >>> root.left = Node(2)
+        >>> root.right = Node(3)
+        >>> b = BinaryTree(root)
+        >>> print(b.__repr__())
+        1
+            2
+            3
+
+        """
+
+        return self.repr(self.root, 0)
+
+    def repr(self, node, level):
+        """
+
+        """
+
+        if node is None:
+            return ""
+
+        res = "  " * level + str(node.val) + "\n"
+        res += self.repr(node.left, level+1)
+        res += self.repr(node.right, level+1)
+        return res
+
     def insert(self, n: Any):
         """
 
