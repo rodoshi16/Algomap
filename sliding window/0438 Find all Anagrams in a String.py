@@ -27,6 +27,14 @@ def findAnagrams(s: str, p: str) -> list[str]:
     1 <= s.length, p.length <= 3 * 104
     s and p consist of lowercase English letters.
 
+    Time: 0(n)
+    Space: 0(p) + 0(p) + 0(s) ~ 0(s) since p <= s
+
+    Edge cases for strings:
+
+    - empty strings (both),
+    - one empty string
+
 
 
     """
