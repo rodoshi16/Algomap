@@ -27,31 +27,29 @@ def mergeTwoLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optio
 
 
         """
-        curr1 = list1
-        curr2 = list2
-        if curr1.val < curr2.val:
-                dummy = ListNode(curr1.val)
-                dummy.next = curr2
-        else:
-                dummy = ListNode(curr2.val)
-                dummy.next = curr1
+        dummy = ListNode()
+        tail = dummy
 
-        curr1 = list1.next
-        curr2 = list2.next
-
-        while curr1 and curr2:
-                #new list has to be sorted
-                if curr1.val < curr2.val:
-                        dummy.next = curr1
-                        dummy.next.next = curr2
+        while list1 and list2:
+                if list1.val < list2.val:
+                        tail.next = list1
+                        list1 = list1.next
                 else:
-                        dummy.next = curr2
-                        dummy.next.next = curr1
+                        tail.next = list2
+                        list2 = list2.next
 
-                curr1 = curr1.next
-                curr2 = curr2.next
+                tail = tail.next
 
-        return dummy
+        if list1:
+                tail.next = list1
+        elif list2:
+                tail.next = list2
+
+        return dummy.next
+
+
+
+
 
 
 
