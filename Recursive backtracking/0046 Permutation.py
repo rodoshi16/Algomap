@@ -17,6 +17,9 @@ def permute(nums: list[int]):
     Input: nums = [1]
     Output: [[1]]
 
+    >>> permute([1, 2, 3])
+    [[3, 2, 1], [2, 3, 1], [1, 3, 2], [3, 1, 2], [2, 1, 3], [1, 2, 3]]
+
 
     """
     l = []
@@ -33,6 +36,84 @@ def permute(nums: list[int]):
         nums.append(n)
 
     return l
+
+#given a string returns the longest portion where no char repeat
+
+"abcdefghjikl"
+"abcda"
+"bbbb"
+
+
+def f(s: str):
+    """
+
+    >>> f("abcdeee")
+    5
+
+    babacdef
+
+    """
+    left = 0
+    st = set()
+    max_l = 0
+    for right in range( len(s)):
+        if s[right] not in st:
+            st.add(s[right])
+        else:
+            while s[right] in st:
+                st.remove(s[left])
+                left += 1
+            st.add(s[right])
+        max_l = max(max_l, len(st))
+
+    return max_l
+
+
+
+
+
+    return
+
+"""
+
+#find increasing subsequence of an array
+input -> int 
+constraints -> 10^5 
+
+[1, 2, 4, 3, 0] 
+empty list -> longest subsequence would be 0 
+
+"""
+
+
+def long(nums: list[int]):
+    """
+    >>> long([1, 2, 4, 3, 0])
+    [1, 2, 4]
+
+
+
+
+    """
+    m = 0
+    l = 0
+    for right in range(len(nums)):
+        while nums[l] > nums[right]:
+            l += 1
+            m = max(m, len(nums[l: right]))
+    return m
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

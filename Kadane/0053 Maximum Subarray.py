@@ -34,7 +34,6 @@ def maxSubArray(nums):
 
     return maxSum
 
-
     #Brute Force Solution
     # count = nums[0]
     #     for i in range(len(nums)):

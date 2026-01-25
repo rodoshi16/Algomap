@@ -35,21 +35,14 @@ def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
     Space complexity: 0(1)
 
     """
-
-    #initialize
-    curr, prev = head, None
-
+    prev = None
+    curr = head
     while curr is not None:
-        #store the next value
-        temp = curr.next
-        #draw the backwards connection
+        a = curr.next
         curr.next = prev
-        #move the prev pointer to curr
         prev = curr
-        #curr will move to temp (which is technically next in the list)
-        curr = temp
+        curr = a
 
     return prev
-
 
 
