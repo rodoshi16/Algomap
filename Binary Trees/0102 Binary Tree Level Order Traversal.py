@@ -32,11 +32,31 @@ def levelorder(root):
     -1000 <= Node.val <= 1000
 
     """
+    if root is None:
+        return []
+
     q = [root]
     lst = []
 
+    #
+
     while q:
-        node = q.pop(0)
-        
+        level_size = len(q)
+        visited = []
+
+        for i in range(level_size):
+            node = q.pop(0)
+            visited.append(node.val)
+
+            if node.left:
+                q.append(node.left.val)
+            if node.right:
+                q.append(node.right.val)
+
+        lst.append(visited)
+
+    return lst
+
+
 
 
