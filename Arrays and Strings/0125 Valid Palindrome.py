@@ -22,13 +22,24 @@ def isPalindrome(self, s: str) -> bool:
     Since an empty string reads the same forward and backward, it is a palindrome.
 
     """
-    
-    new = ''
-        for string in s:
-            if string.isalnum():
-                new += string
 
 
 
-    return new.lower().strip() == new[::-1].lower().strip()
+
+
+    #0(n^2) solution -> not interview optimal, why?
+    # look at st += c (1 + 2 + 3 --- + n) so 0(n^2) for the whole loop
+    # st.lower() is also 0(n) since it scans the whole string
+    # strip(): scans from both ends -> 0(n) in worst case
+    # st[::-1]: 0(n)
+
+    st = ""
+    for c in s:
+        if c.isalnum():
+            st += c
+
+    return st.lower().strip() == st[::-1].lower().strip()
+
+
+
 
