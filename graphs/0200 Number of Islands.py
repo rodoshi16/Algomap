@@ -36,10 +36,52 @@ def number_of_islands(grid: list[list[str]]) -> int:
      Number of cells = m * n
      Visited would have the worst space complexity of 0(m*n)
 
+     FOR DFS:
+
+     - nested loop: 0(n*m), n = len(row), m = len(col)
+     - dfs: worst case all 1s in the arr, first iteration visits all cells, number of cells: n*m
+     BUT never visited again so
+
+     0(n*m) + 0(n*m) = 0(n*m)
 
 
 
     """
+
+    row = len(grid)
+    col = len(grid[0])
+    island = 0
+    visited = set()
+
+    def dfs(i, j):
+        visited.add((i, j))
+        directions = [(1,0), (-1, 0), (0, 1), (0, -1)]
+        for d in directions:
+            dr = i + d[0]
+            dc = j + d[1]
+            if 0 <= dr < row and 0 <= dc < col and grid[dr][dc] == "1" and (dr,dc) not in visited:
+                dfs(dr, dc)
+        return
+
+    for i in range(row):
+        for j in range(col):
+            if grid[i][j] == "1" and (i,j) not in visited:
+                island += 1
+                dfs(i, j)
+    return island
+
+
+
+
+
+
+
+
+
+
+
+
+#BFS SOLUTION
     if not grid:
         return 0
 

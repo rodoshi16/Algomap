@@ -53,9 +53,10 @@ class LRUCache:
         self.r = []
 
     def get(self, key: int) -> int:
+        # lookup: 0(1)
         if key in self.d:
             if key in self.r:
-                self.r.remove(key)
+                self.r.remove(key) #0(n)
                 self.r.append(key)
             return self.d[key]
         return -1
