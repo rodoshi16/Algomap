@@ -70,17 +70,6 @@ def number_of_islands(grid: list[list[str]]) -> int:
                 dfs(i, j)
     return island
 
-
-
-
-
-
-
-
-
-
-
-
 #BFS SOLUTION
     if not grid:
         return 0
