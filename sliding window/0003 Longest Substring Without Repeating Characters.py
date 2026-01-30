@@ -54,21 +54,39 @@ def longest_substring(s: str) -> int:
 
 
     """
+    #substring, we don't know length
+    # sliding window, dynamic
+
+    # s: empty
+    # len(1)
+    #uppercase, lowercase
+    # duplicates
+
+    #abcabbcbb
+    # iterate, if duplicate, remove all left until no duplicates, add right
+    # set: visited
+
+    if len(s) == 1 or len(s) == 0:
+        return len(s)
+
+    left = 0
     l = 0
-    sub = set()
-    max_l = 0
 
+    visited = set()
     for right in range(len(s)):
-        if s[right] not in sub:
-            sub.add(s[right])
-        else:
-            while s[right] in sub:
-                sub.remove(s[l])
-                l += 1
-            sub.add(s[right])
-        max_l = max(max_l, len(sub))
+        while s[right] in visited:
+            visited.remove(s[left])
+            left += 1
 
-    return max_l
+        visited.add(s[right])
+        l = max(l, right-left + 1)
+
+    return l
+
+
+
+
+
 
 
 
