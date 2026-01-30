@@ -32,39 +32,47 @@ def findAnagrams(s: str, p: str) -> list[str]:
 
     Edge cases for strings:
 
-    - empty strings (both),
-    - one empty string
+    - no empty strings
+    - "r", "ghdjh"
+    - "ghdjhf", "r"
+    - "ab", "abghfkdjhfk"
+    - "ab", "baababababab"
+
+    Space:
+
+    - e: len(p) [worst case all are unique] = 26 char 0(26) ~ 0(1)
+    - d: len(p) ~0(1)
+
 
 
 
     """
-    #anagrams of p -> frequency map
-    # iterate through s using sliding window and check the frequency
-    #size of window : 3
-
     if len(p) > len(s):
         return []
 
     d = {}
+
+    for ele in p:
+        d[ele] = d.get(ele, 0) + 1
+
     e = {}
-    l = []
     left = 0
-    for i in range(len(p)):
-        d[p[i]] = d.get(p[i], 0) + 1
-        e[s[i]] = e.get(s[i], 0) + 1
+    lst = []
 
-    if d == e:
-        l.append(0)
-
-    for right in range(len(p), len(s)):
+    for right in range(len(s)):
         e[s[right]] = e.get(s[right], 0) + 1
-        e[s[left]] -= 1
-        if e[s[left]] == 0:
-            e.pop(s[left])
-        left += 1
-        if d == e:
-            l.append(left)
 
-    return l
+        if right - left + 1 > len(p):
+            e[s[left]] -= 1
+            if e[s[left]] == 0:
+                del e[s[left]]
+            left += 1
+
+        if right - left + 1 == len(p):
+            if d == e:
+                lst.append(left)
+    return lst
+
+
 
 

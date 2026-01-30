@@ -16,6 +16,15 @@ def checkInclusion(self, s1: str, s2: str) -> bool:
     - looking for substring
     - size of window = len(s1)
 
+    Time: 0(n) one pass
+    Space:
+
+    - all chars (a-z) 26 max keys
+    - 0(26) for d
+    - 0(len(s1)) for e
+
+    Overall, space: 0(1)
+
 
     """
 
