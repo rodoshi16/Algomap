@@ -26,6 +26,9 @@ def rob(nums: list[int]) -> int:
     1 <= nums.length <= 100
     0 <= nums[i] <= 400
 
+    >>> rob([1,2,3,1])
+    4
+
     """
 
     rob1 = 0

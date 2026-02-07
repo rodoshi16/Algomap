@@ -26,10 +26,10 @@ def longest_substring(s: str) -> int:
     0 <= s.length <= 5 * 104
     s consists of English letters, digits, symbols and spaces.
 
-    >>> longest_substring(" ")
-    1
     >>> longest_substring("abcabcbb")
     3
+    >>> longest_substring(" ")
+    1
     >>> longest_substring("pwwkew")
     3
     >>> longest_substring("abcabcabc")
@@ -53,6 +53,7 @@ def longest_substring(s: str) -> int:
     worst case m = n where all characters are unique
 
 
+
     """
     #substring, we don't know length
     # sliding window, dynamic
@@ -66,24 +67,22 @@ def longest_substring(s: str) -> int:
     # iterate, if duplicate, remove all left until no duplicates, add right
     # set: visited
 
-    if len(s) == 1 or len(s) == 0:
-        return len(s)
+    if s == "":
+        return 0
 
-    left = 0
     l = 0
+    seen = set()
+    m = 0
 
-    visited = set()
-    for right in range(len(s)):
-        while s[right] in visited:
-            visited.remove(s[left])
-            left += 1
+    for r in range(len(s)):
+        while s[r] in seen:
+            seen.remove(s[l])
+            l += 1
 
-        visited.add(s[right])
-        l = max(l, right-left + 1)
+        seen.add(s[r])
+        m = max(m, len(seen))
 
-    return l
-
-
+    return m
 
 
 

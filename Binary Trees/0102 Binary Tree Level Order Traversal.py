@@ -48,8 +48,6 @@ def levelorder(root):
     q = deque()
     lst = []
 
-    #
-
     while q:
         level_size = len(q)
         visited = []
