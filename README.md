@@ -23,7 +23,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - [Kadane's Algorithm](#kadanes-algorithm)
 - [Algorithms](#algorithms)
 
----
+
 
 ## Arrays & Strings
 
@@ -53,7 +53,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - `basics.md` - Basic concepts and notes
 - `data_types.md` - Data type documentation
 
----
+
 
 ## Two Pointers
 
@@ -63,7 +63,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - [0228 - Summary Ranges](https://leetcode.com/problems/summary-ranges/)
 - [0283 - Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 
----
+
 
 ## Binary Search
 
@@ -74,7 +74,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - [0704 - Binary Search](https://leetcode.com/problems/binary-search/)
 - [0875 - Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
 
----
+
 
 ## Linked Lists
 
@@ -87,7 +87,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - `linked_list.py` - Linked list implementation
 - `linked_list.txt` - Notes and documentation
 
----
+
 
 ## Binary Trees
 
@@ -100,7 +100,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - `binary_trees.py` - Binary tree implementation
 - `binary_tree.md` - Binary tree concepts and notes
 
----
+
 
 ## Trees
 
@@ -114,7 +114,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - `count_nodes.py` - Node counting utility
 - `trees.txt` - Tree concepts documentation
 
----
+
 
 ## Graphs
 
@@ -125,7 +125,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - `graph.py` - Graph implementation
 - `graph.txt` - Graph concepts documentation
 
----
+
 
 ## Dynamic Programming
 
@@ -136,7 +136,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 ### Additional Files
 - `is_in_a_star.py` - A* algorithm implementation
 
----
+
 
 ## Greedy Algorithms
 
@@ -144,7 +144,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - [0121 - Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [0860 - Lemonade Change](https://leetcode.com/problems/lemonade-change/)
 
----
+
 
 ## Recursive Backtracking
 
@@ -156,7 +156,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 ### Additional Files
 - `backtracking.md` - Backtracking algorithm notes
 
----
+
 
 ## Sliding Window
 
@@ -164,7 +164,7 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - [0438 - Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
 - [0567 - Permutation in String](https://leetcode.com/problems/permutation-in-string/)
 
----
+
 
 ## Hash Tables & Hashmaps
 
@@ -175,13 +175,13 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - `Hashmap/basics.md` - Hashmap fundamentals
 - `Hash Tables/bascis.md` - Hash table notes
 
----
+
 
 ## Stacks
 
 - [0020 - Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 
----
+
 
 ## Heaps
 
@@ -189,26 +189,26 @@ A comprehensive collection of LeetCode problem solutions organized by topic and 
 - `heaps.py` - Heap implementation
 - `priority_queue.md` - Priority queue documentation
 
----
+
 
 ## Design
 
 - [0146 - LRU Cache](https://leetcode.com/problems/lru-cache/)
 
----
+
 
 ## Matrices
 
 - [0054 - Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
 - [0695 - Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
 
----
+
 
 ## Kadane's Algorithm
 
 - [0053 - Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
----
+
 
 ## Algorithms
 
@@ -221,38 +221,3 @@ Core algorithm implementations:
 - `merge_sort.py` - Merge sort implementation
 - `perm_power.py` - Permutation power algorithm
 - `repeated_squaring.py` - Repeated squaring algorithm
-
----
-
-## Additional Files
-
-- `main.py` - Main entry point
-- `codility.py` - Codility practice problems
-- `string_change.py` - String manipulation utilities
-
----
-
-## 📊 Statistics
-
-- **Total Problems Solved**: ~70+ LeetCode problems
-- **Topics Covered**: 15+ algorithm/data structure categories
-- **Language**: Python 3
-
----
-
-## 🔗 Resources
-
-- [LeetCode](https://leetcode.com/) - Practice platform
-- [LeetCode Problems](https://leetcode.com/problemset/all/) - All problems
-
----
-
-## 📝 Notes
-
-- Solutions include problem descriptions, examples, and complexity analysis where applicable
-- Some problems appear in multiple categories (e.g., "Best Time to Buy and Sell Stock" in DP, Greedy, and Sliding Window)
-- Documentation files (`.md`, `.txt`) contain additional notes and concepts for each topic
-
----
-
-*Last updated: Repository organized by problem categories and algorithm types*
