@@ -2,7 +2,7 @@
 
 LeetCode solutions organized by topic and patterns
 
-## 📚 Breakdown of Topics
+## Breakdown of Topics
 
 - [Arrays & Strings](#arrays--strings)
 - [Two Pointers](#two-pointers)
@@ -48,6 +48,10 @@ LeetCode solutions organized by topic and patterns
 ### Sliding Window
 - [0121 - Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [0643 - Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)
+- [0003 - Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+- [0438 - Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
+- [0567 - Permutation in String](https://leetcode.com/problems/permutation-in-string/)
+
 
 
 ## Two Pointers
@@ -115,6 +119,7 @@ LeetCode solutions organized by topic and patterns
 
 - [0133 - Clone Graph](https://leetcode.com/problems/clone-graph/)
 - [0200 - Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [0695 - Max Area of Island](https://leetcode.com/problems/max-area-of-island/) 
 
 ### Additional Files
 - `graph.py` - Graph implementation
@@ -152,15 +157,6 @@ LeetCode solutions organized by topic and patterns
 - `backtracking.md` - Backtracking algorithm notes
 
 
-
-## Sliding Window
-
-- [0003 - Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-- [0438 - Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
-- [0567 - Permutation in String](https://leetcode.com/problems/permutation-in-string/)
-
-
-
 ## Hash Tables & Hashmaps
 
 ### Hashmap
@@ -175,6 +171,7 @@ LeetCode solutions organized by topic and patterns
 ## Stacks
 
 - [0020 - Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+- [0155 - Min Stack](https://leetcode.com/problems/min-stack/description/)
 
 
 
@@ -195,7 +192,6 @@ LeetCode solutions organized by topic and patterns
 ## Matrices
 
 - [0054 - Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
-- [0695 - Max Area of Island](https://leetcode.com/problems/max-area-of-island/)
 
 
 
