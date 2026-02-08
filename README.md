@@ -43,16 +43,11 @@ LeetCode solutions organized by topic and patterns
 - [1768 - Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/)
 - [2239 - Find Closest Number to Zero](https://leetcode.com/problems/find-closest-number-to-zero/)
 
+
+
 ### Sliding Window
 - [0121 - Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [0643 - Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)
-
-### Additional Files
-- `Group Anagrams.py`
-- `Find Duplicates.py`
-- `basics.md` - Basic concepts and notes
-- `data_types.md` - Data type documentation
-
 
 
 ## Two Pointers
