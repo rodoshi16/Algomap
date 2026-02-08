@@ -41,27 +41,34 @@ class MinStack:
     At most 3 * 104 calls will be made to push, pop, top, and getMin.
 
 
+    MAIN INTUITION:
+
+    Using any other data structure like hashmaps or a single list or trees, we cant achieve getMin in 0(1).
+
 
     """
-    s: dict
 
     def __init__(self):
-        self.s = {}
-        self.i = 0
+        self.s = []
+        self.t = []
 
     def push(self, val: int) -> None:
-        self.s[self.i] = val
-        self.i += 1
+        self.s.append(val)
+        if not self.t or val <= self.t[-1]:
+            self.t.append(val)
 
     def pop(self) -> None:
-        self.s.popitem()
-        self.i -= 1
+        ele = self.s.pop()
+        if self.t and self.t[-1] == ele:
+            self.t.pop()
 
     def top(self) -> int:
-        return self.s[self.i-1]
+        if self.s:
+            return self.s[-1]
 
     def getMin(self) -> int:
-        return min(self.s.values())
+        if self.t:
+            return self.t[-1]
 
 
 
