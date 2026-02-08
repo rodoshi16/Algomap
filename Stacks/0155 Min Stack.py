@@ -43,7 +43,28 @@ class MinStack:
 
     MAIN INTUITION:
 
-    Using any other data structure like hashmaps or a single list or trees, we cant achieve getMin in 0(1).
+    Using any other data structure like hashmaps or a single list or trees, we cant achieve getMin in 0(1). 
+    Instead, we use another stack where can just store the min. 
+
+    For example, push -> -2, 0, -2, 3 
+
+    If you use a global variable, u track the -3 but if it gets popped, you have no idea what the prev min was. 
+    In a second stack, u can check if your current push is less than your current min and push, 
+
+    -2, -3 
+
+    After you pop -3, -2 is the current min now. 
+
+    Time: 
+
+    - append, pop last element and lookup based on index is 0(1)
+    - all operations are constant time 
+
+    Space:
+
+    - 0(n): where self.s can grow to the number of elements pushed
+    [Worst case: decreasing array where self.t also gets pushed n elements] 
+
 
 
     """
@@ -69,12 +90,6 @@ class MinStack:
     def getMin(self) -> int:
         if self.t:
             return self.t[-1]
-
-
-
-
-
-
 
 
 
