@@ -1,6 +1,6 @@
 # Daily Reps of DSA
 
-LeetCode solutions organized by topic and patterns
+LeetCode solutions organized by topic and patterns. Each file includes Time and Space Complexity breakdowns. 
 
 ## Breakdown of Topics
 
@@ -156,8 +156,6 @@ LeetCode solutions organized by topic and patterns
 ### Additional Files
 - `backtracking.md` - Backtracking algorithm notes
 
-
-## Hash Tables & Hashmaps
 
 ### Hashmap
 - [0001 - Two Sum](https://leetcode.com/problems/two-sum/)
