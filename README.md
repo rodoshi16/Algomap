@@ -1,8 +1,8 @@
-# LeetCode Solutions Repository
+# Daily Reps of DSA
 
-A comprehensive collection of LeetCode problem solutions organized by topic and algorithm type. All solutions are implemented in Python.
+LeetCode solutions organized by topic and patterns
 
-## 📚 Table of Contents
+## 📚 Breakdown of Topics
 
 - [Arrays & Strings](#arrays--strings)
 - [Two Pointers](#two-pointers)
