@@ -175,6 +175,7 @@ LeetCode solutions organized by topic and patterns
 ## Stacks
 
 - [0020 - Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+- [0155 Min Stack](https://leetcode.com/problems/min-stack/description/)
 
 
 
