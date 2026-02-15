@@ -88,12 +88,20 @@ LeetCode solutions organized by topic and patterns. Each file includes Time and 
 
 
 
-## Binary Trees
+### Binary Trees
+
+## Level order 
+
+- [0102 - Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+- [0103 - Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+- [0199 - Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/description/)
+
+
+
+## In order 
 
 - [0094 - Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 - [0098 - Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
-- [0102 - Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
-- [0103 - Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 
 ### Additional Files
 - `binary_trees.py` - Binary tree implementation
@@ -169,20 +177,13 @@ LeetCode solutions organized by topic and patterns. Each file includes Time and 
 ## Stacks
 
 - [0020 - Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
-<<<<<<< HEAD
 - [0155 Min Stack](https://leetcode.com/problems/min-stack/description/)
-=======
-- [0155 - Min Stack](https://leetcode.com/problems/min-stack/description/)
->>>>>>> c8c5a5f6c01d9b74d4173d76e713e3ccbe051b5a
-
-
 
 ## Heaps
 
 ### Additional Files
 - `heaps.py` - Heap implementation
 - `priority_queue.md` - Priority queue documentation
-
 
 
 ## Design
