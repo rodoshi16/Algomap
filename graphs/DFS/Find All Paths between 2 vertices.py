@@ -32,7 +32,7 @@ def find_paths(n: int, edges: list[list[int]], source, destination) -> list[list
                 if neighbour not in path:
                     dfs(neighbour)
 
-        # path.pop()
+        path.pop()
 
     dfs(source)
     return paths
