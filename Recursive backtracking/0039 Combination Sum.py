@@ -38,6 +38,15 @@ def combinationSum(candidates: list[int], target: int) -> list[list[int]]:
     >>> combinationSum([2,5,6,9], 9)
     [[2, 2, 5], [9]]
 
+    Time complexity: 2^Target
+
+    - max recursion depth: T/min(nums)
+    For example, if you have [2,3] and looking for 100, then u will have the longest branch which will be
+    2 going down 50 times.
+    - branching factor: 2
+    - number of nodes: 2^(T/min(nums))
+    - worst case: min(nums) is 1
+
     """
     lst = []
     path = []
