@@ -22,20 +22,28 @@ def twoSum(self, nums: list[int], target: int) -> list[int]:
     Input: nums = [3,3], target = 6
     Output: [0,1]
     """
-    #[2, 5, 7, 11, 15], 9
+
+    #intuition here: store complement as a key and index as a val in dict
+    # one pass
 
     d = {}
+    lst = []
     for i in range(len(nums)):
-        c = target - nums[i]
-        if c in d:
-            return [d[c], i]
+        if nums[i] in d:
+            lst.append(d[nums[i]])
+            lst.append(i)
+        else:
+            diff = target - nums[i]
+            d[diff] = i
 
-        d[nums[i]] = i
-    return d
+    return lst
 
 
 
-    # 2 pointer approach 0(n)
+
+
+
+# 2 pointer approach 0(n)
     # left = 0
     # lst = []
     #
