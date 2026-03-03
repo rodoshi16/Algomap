@@ -16,23 +16,48 @@ def dfs(n: int, edges: list[list[Any]]):
     # just the first line of setdefault would be okay
 
     d = {}
+
     for u, v in edges:
         d.setdefault(u, []).append(v)
         d.setdefault(v, []).append(u)
 
-    visited = set()
+    visited = []
 
-    def dfs_visit(k: Any):
-        visited.add(k)
-        for neighbour in d[k]:
-            if neighbour not in visited:
-                dfs_visit(neighbour)
+    def dfs(start):
+        s = [start]
 
-    for key in d:
-        if key not in visited:
-            dfs_visit(key)
+        while s:
+            temp = s.pop()
+            visited.append(temp)
+
+            for n in d[temp]:
+                if n not in visited:
+                    s.append(n)
+
+    for node in d:
+        if node not in visited:
+            dfs(node)
 
     return visited
+
+    # d = {}
+    # for u, v in edges:
+    #     d.setdefault(u, []).append(v)
+    #     d.setdefault(v, []).append(u)
+    #
+    # visited = set()
+    #
+    # def dfs_visit(k: Any):
+    #     visited.add(k)
+    #     for neighbour in d[k]:
+    #         if neighbour not in visited:
+    #             dfs_visit(neighbour)
+    #
+    # for key in d:
+    #     if key not in visited:
+    #         dfs_visit(key)
+    #
+    # return visited
 
 
 
