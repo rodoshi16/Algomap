@@ -77,25 +77,27 @@ def cloneGraph(node: Optional['Node']) -> Optional['Node']:
     - visited grows to number of vertices
     - clone stores one at a time
 
+    >>> cloneGraph([[2,4],[1,3],[2,4],[1,3]])
+
 
     """
 
-    visited = {}
     if node is None:
-        return node
-    def dfs(node):
-        if node in visited:
-            return visited[node]
+        return None
 
-        clone = Node(node.val)
-        visited[node] = clone
+    visited = set()
+    d = {}
 
-        for n in node.neighbors:
-            clone.neighbors.append(dfs(n))
+    def dfs(source):
+        visited.add(source)
+        d[source] = Node(source.val)
 
-        return clone
+        for nei in source.neighbors:
+            if nei not in visited:
+                dfs(nei)
+            d[source].neighbors.append(d[nei])
 
-    return dfs(node)
-
+    dfs(node)
+    return d[node]
 
 
