@@ -85,6 +85,14 @@ class Heap:
         return root
 
 
+    def build_heap(self):
+        """
+
+        Convert an sorted array to a valid heap.
+        """
+
+
+
 
 
 
